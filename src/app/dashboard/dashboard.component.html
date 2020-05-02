@@ -1,1 +1,106 @@
-<p>dashboard works!</p>
+<div class="container" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="spinner-border" role="status" *ngIf="data.length === 0">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="card-deck" *ngIf="data.length > 0">
+        <div class="card card-shadow border-danger">
+          <div class="card-body text-danger font-weight-bold">
+            <h5 class="card-title">Total Confirmed</h5>
+            <p class="card-text">
+              <small>[+{{ titleData.deltaconfirmed }}]</small>
+            </p>
+            <p class="card-text">{{ titleData.confirmed }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              <pre>Last Update : {{ titleData.lastupdatedtime }}</pre>
+            </small>
+          </div>
+        </div>
+        <div class="card card-shadow border-primary">
+          <div class="card-body text-primary font-weight-bold">
+            <h5 class="card-title">Active Cases</h5>
+            <p class="card-text">{{ titleData.active }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              <pre>Last Updated : {{ titleData.lastupdatedtime }}</pre>
+            </small>
+          </div>
+        </div>
+        <div class="card card-shadow border-success">
+          <div class="card-body text-success font-weight-bold">
+            <h5 class="card-title">Recovered</h5>
+            <p class="card-text">
+              <small>[+{{ titleData.deltarecovered }}]</small>
+            </p>
+            <p class="card-text">{{ titleData.recovered }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              <pre>Last Updated : {{ titleData.lastupdatedtime }}</pre>
+            </small>
+          </div>
+        </div>
+        <div class="card card-shadow border-secondary">
+          <div class="card-body text-secondary font-weight-bold">
+            <h5 class="card-title">Deceased</h5>
+            <p class="card-text">
+              <small>[+{{ titleData.deltadeaths }}]</small>
+            </p>
+            <p class="card-text">{{ titleData.deaths }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              <pre>Last Updated : {{ titleData.lastupdatedtime }}</pre>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="row d-flex justify-content-center top-buffer"
+    *ngIf="data && data.length"
+  >
+    <div class="col-sm-9 col-md-9 col-xs-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">State/UT</th>
+            <th scope="col">Active</th>
+            <th scope="col">Confirmed</th>
+            <th scope="col">Deaths</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of data">
+            <td>
+              <a [routerLink]="['/state', d.state]">{{ d.state }}</a>
+            </td>
+            <td>{{ d.active }}</td>
+            <td>
+              {{ d.confirmed }}
+              <small *ngIf="d.deltaconfirmed > 0">[+{{ d.deltaconfirmed }}]</small>
+            </td>
+            <td>
+              {{ d.deaths }}
+              <small *ngIf="d.deltadeaths > 0">[+{{ d.deltadeaths }}]</small>
+            </td>
+            <td>
+              {{ d.recovered }}
+              <small *ngIf="d.deltarecovered > 0"
+                >[+{{ d.deltarecovered }}]</small
+              >
+            </td>
+            <td>{{ d.lastupdatedtime }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

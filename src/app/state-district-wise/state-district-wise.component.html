@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row top-buffer">
+        <div class="col-12 align-center">
+            <h2>{{ stateName }}</h2>
+        </div>
+    </div>
+    <div class="row top-buffer" *ngIf="district && district.length">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">District Name</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">Confirmed</th>
+                    <th scope=col>Deaths</th>
+                    <th scope="col">Recovered</th>
+                    <!-- <th scope="col">Last Updated</th>  -->
+                </tr>
+            </thead>
+            <tr *ngFor="let dis of district">
+                <td>{{dis[0]}}</td>
+                <td>{{dis[1].active}}</td>
+                <td>{{dis[1].confirmed}} <small *ngIf="dis[1].delta.confirmed>0">[+{{dis[1].delta.confirmed}}]</small></td>
+                <td>{{dis[1].deceased}} <small *ngIf="dis[1].delta.deceased>0">[+{{dis[1].delta.deceased}}]</small></td>
+                <td>{{dis[1].recovered}} <small *ngIf="dis[1].delta.recovered>0">[+{{dis[1].delta.recovered}}]</small></td>
+            </tr>    
+        </table>
+    </div>
+</div>

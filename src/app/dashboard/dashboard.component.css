@@ -1,0 +1,24 @@
+
+.card-shadow{
+    box-shadow: 5px 5px 5px grey;
+}
+
+  table tbody td .deltas svg {
+    width: 9px;
+    height: 9px;
+    stroke-width: 3;
+    vertical-align: -.25px;
+}
+.top-buffer { margin-top:40px; }
+a:hover{
+    text-decoration: none;
+}
+
+/* h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 50px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+} */
