@@ -1,0 +1,6 @@
+.align-center{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+.top-buffer { margin-top:40px; }

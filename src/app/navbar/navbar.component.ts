@@ -18,7 +18,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.navbarOpen = false;
-    this.isLoggedIn = this.isAdminLoggedIn();
+    this.loginService.userLogDetail.subscribe( c => {
+      this.isLoggedIn = c;
+    });
+    // this.isLoggedIn = this.isAdminLoggedIn();
+    // this.loginService.getAdminStatus().subscribe( c => {
+    //   this.isLoggedIn = c
+    // })
   }
 
   toggleNavbar() {

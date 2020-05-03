@@ -22,9 +22,7 @@ export class AdminLoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    if (localStorage.getItem('TOKEN')) {
-      localStorage.clear();
-    }
+
   }
 
   getErrorMessage() {
@@ -40,6 +38,7 @@ export class AdminLoginComponent implements OnInit {
       else{
        this.invalid = true;
       }
+      this.loginService.getAdminStatus();
     }
 
   resetForm() {

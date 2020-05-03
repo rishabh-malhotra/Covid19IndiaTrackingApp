@@ -8,6 +8,6 @@ export class NewsDataModel {
         this.title = title;
         this.description = description;
         this.summary = summary;
-        this.addedOn = Date.now.toString();
+        this.addedOn = new Date().toString();
     }
 }
