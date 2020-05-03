@@ -12,8 +12,6 @@ export class ApiService {
   }
 
   getStatesData(){
-    console.log("hello");
-    console.log(`${this.url}/data.json`);
     return this.http.get(`${this.url}/data.json`);
   }
 

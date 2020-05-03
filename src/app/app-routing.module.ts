@@ -5,6 +5,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { NewsComponent } from './news/news.component';
 import { PrecautionsComponent } from './precautions/precautions.component';
 import { StateDistrictWiseComponent } from './state-district-wise/state-district-wise.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'precautions', component: PrecautionsComponent },
   { path: 'login', component: AdminLoginComponent },
-  { path: 'state/:statename', component: StateDistrictWiseComponent }
+  { path: 'state/:statename', component: StateDistrictWiseComponent },
+  { path: '**' , component: NotFoundPageComponent }
 ];
 
 @NgModule({

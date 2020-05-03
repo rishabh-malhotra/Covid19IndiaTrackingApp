@@ -4,6 +4,11 @@
             <h2>{{ stateName }}</h2>
         </div>
     </div>
+    <div class="col d-flex justify-content-center align-middle" *ngIf="!district">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
     <div class="row top-buffer" *ngIf="district && district.length">
         <table class="table">
             <thead>

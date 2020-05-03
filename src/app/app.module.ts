@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { StateDistrictWiseComponent } from './state-district-wise/state-district
 
 import { ApiService } from './services/api-service/api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NewsComponent,
     AdminLoginComponent,
     PrecautionsComponent,
-    StateDistrictWiseComponent
+    StateDistrictWiseComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
