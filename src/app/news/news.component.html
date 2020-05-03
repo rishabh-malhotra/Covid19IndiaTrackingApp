@@ -1,1 +1,31 @@
-<p>news works!</p>
+<nav class='navbar navbar-expand navbar-light bg-light'>
+	<ul class='navbar-nav'>
+	  <li class='nav-item'><a class='nav-link' routerLink='/news' routerLinkActive='active'>User List</a>
+	  </li>
+	  <li class='nav-item'><a class='nav-link' routerLink='/addnews' routerLinkActive='active'>Add New User</a>
+	  </li>
+  </ul>
+  </nav>
+
+  <div class="row" *ngFor="let item of newsList">
+    <div class="col-xs-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                {{ item.title }}
+                </mat-card-title>   
+                <mat-card-subtitle>
+                {{ item.description }}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p [innerHtml]="item.content">   
+                </p>
+            </mat-card-content>
+            <mat-card-footer>
+              {{ item.dateAdded }}  
+            </mat-card-footer>   	
+        </mat-card>
+        <hr>
+    </div>  
+</div>

@@ -6,6 +6,8 @@ import { NewsComponent } from './news/news.component';
 import { PrecautionsComponent } from './precautions/precautions.component';
 import { StateDistrictWiseComponent } from './state-district-wise/state-district-wise.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AuthGuardService } from './services/auth-guard-service/auth-guard.service';
+import { AddNewsComponent } from './news/add-news/add-news.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -13,8 +15,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'news', component: NewsComponent },
   { path: 'precautions', component: PrecautionsComponent },
-  { path: 'login', component: AdminLoginComponent },
+  { path: 'login', /*canActivate: [AuthGuardService],*/ component: AdminLoginComponent },
   { path: 'state/:statename', component: StateDistrictWiseComponent },
+  { path: 'addnews', canActivate: [AuthGuardService], component: AddNewsComponent },
   { path: '**' , component: NotFoundPageComponent }
 ];
 

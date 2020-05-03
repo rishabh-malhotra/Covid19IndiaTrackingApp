@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './material/material.module';
 import { ToastrModule } from 'ngx-toastr';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,8 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StateDistrictWiseComponent } from './state-district-wise/state-district-wise.component';
 
 import { ApiService } from './services/api-service/api.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import {LoginService} from './services/login-service/login.service';
+import { AuthGuardService } from './services/auth-guard-service/auth-guard.service';
+import { AddNewsComponent } from './news/add-news/add-news.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     AdminLoginComponent,
     PrecautionsComponent,
     StateDistrictWiseComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    AddNewsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +42,9 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    ToastrModule
+    ToastrModule,
   ],
-  providers: [ApiService],
+  providers: [ApiService, LoginService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
