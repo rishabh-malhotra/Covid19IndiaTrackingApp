@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class PrecautionsComponent implements OnInit {
 
   title: string;
+  imagesSrc: Array<string> = [];
   constructor() {
     this.title = 'Precautions';
+    this.imagesSrc = [
+      '../../assets/precautions6.jpg',
+      '../../assets/precaution7.jpg',
+      '../../assets/precaution8.jpg',
+      '../../assets/precautions9.png',
+      '../../assets/precautions11.png',
+      '../../assets/precautions12.png'
+    ]
   }
 
   ngOnInit(): void {
