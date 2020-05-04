@@ -15,4 +15,4 @@ got to login credentials would be username:admin, password: root.
 
 ## surge link for a demo
 
-<http://wanting-texture.surge.sh/>
+<http://testy-degree.surge.sh/>
