@@ -39,5 +39,6 @@ export class LoginService {
 
   logOut(): void{
     localStorage.removeItem('token');
+    this.userLogDetail.next(false);
   }
 }

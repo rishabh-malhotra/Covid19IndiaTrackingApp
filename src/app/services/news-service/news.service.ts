@@ -21,7 +21,6 @@ export class NewsService {
 
   addNews(news: NewsDataModel) {
     try {
-      console.log(news);
        // this.newsList = localStorage.getItem('newsDetails');
       this.newsList.push(news);
        // localStorage.setItem('newsDetails',this.newsList);

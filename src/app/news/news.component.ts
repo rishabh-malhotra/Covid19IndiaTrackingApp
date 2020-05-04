@@ -18,11 +18,9 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     this.title = 'Latest News';
     this.newsList = this.newsService.newsList;
-    this.isAdminLoggedIn = this.checkAdminLoggedIn();
-  }
-
-  checkAdminLoggedIn(){
-    return this.loginService.isLoggedIn();
+    this.loginService.userLogDetail.subscribe( c => {
+      this.isAdminLoggedIn = c;
+    });
   }
 
 }

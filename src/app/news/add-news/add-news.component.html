@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" *ngIf="isAdminLoggedIn">
     <div class="row top-buffer">
         <div class="col-12 align-center">
             <h2>{{ title }}</h2>
         </div>
     </div>
-    <nav class='navbar navbar-expand navbar-light bg-light'>
+    <nav class='navbar navbar-expand navbar-light bg-light' >
         <ul class='navbar-nav'>
           <li class='nav-item'><a class='nav-link' routerLink='/news' routerLinkActive='active'>News List</a>
           </li>
